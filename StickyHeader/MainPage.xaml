@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="StickyHeader.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StickyHeader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <LinearGradientBrush  x:Key="HeaderLogoGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF5F5F" Offset="0"/>
+            <GradientStop Color="#EF3131" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer x:Name="MainScrollViewer" >
+
+            <Grid x:Name="MainContentsGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="MainContents" Grid.Row="1" >
+                    <StackPanel>
+                        <Rectangle Fill="#DAECF4" Height="200" />
+                        <Rectangle Fill="#91C5DD" Height="200" />
+                        <Rectangle Fill="#DAECF4" Height="200" />
+                        <Rectangle Fill="#91C5DD" Height="200" />
+                        <Rectangle Fill="#DAECF4" Height="200" />
+                        <Rectangle Fill="#91C5DD" Height="200" />
+                        <Rectangle Fill="#DAECF4" Height="200" />
+                        <Rectangle Fill="#91C5DD" Height="200" />
+                        <Rectangle Fill="#DAECF4" Height="200" />
+                        <Rectangle Fill="#91C5DD" Height="200" />
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel x:Name="ScrollHeader">
+                    <StackPanel Orientation="Horizontal" Background="#2D2D30">
+                        <Border
+                            x:Name="HeaderLogo"
+                            Width="100"
+                            Height="100"
+                            BorderThickness="10" >
+                            <Ellipse Fill="{StaticResource HeaderLogoGradient}" />
+                        </Border>
+
+                        <StackPanel VerticalAlignment="Center" >
+                            <TextBlock x:Name="HeaderText" FontSize="25" Text="Sticky Header" Foreground="#FFFFFF"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
